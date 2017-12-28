@@ -65,6 +65,6 @@ $ curl localhost:5000/address/<invalid_address>
 
 | Response field | Type | Description |
 | --- | --- | --- |
-| address | string | The currently active BCH address |
-| created | boolean | Whether this address was just created. Should return `false` unless this was a POST request. |
+| balance | string | The currently active BCH address balance |
+| exists | boolean | Whether this address currently exists. Should return `true` unless it is an invalid address. |
 
