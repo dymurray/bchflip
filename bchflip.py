@@ -1,10 +1,17 @@
 from flask import Flask, request, jsonify
+from electroncash import SimpleConfig, wallet, daemon
 
 import urllib2
 import json
 
 app = Flask(__name__)
 
+wallet_password = ""
+wallet_path = ""
+
+c = SimpleConfig()
+dm = daemon.Daemon(c, 0)
+wallet = dm.load_wallet(wallet_path, wallet_password)
 
 @app.route('/')
 def hello_world():
@@ -14,8 +21,8 @@ def hello_world():
 @app.route('/address', methods=['GET', 'POST'])
 def address():
     if request.method == 'POST':
-        # generate_new_address()
-        response = jsonify(address="xxxxxxxxx", created=True)
+        address = generate_new_address()
+        response = jsonify(address=address, created=True)
         return response
     else:
         # get_address()
@@ -68,3 +75,8 @@ def get_last_tx(address):
 
 def satoshi_to_bch(satoshi):
     return satoshi * 0.00000001
+
+
+def generate_new_address():
+    return wallet.create_new_address()
+
