@@ -1,10 +1,18 @@
 # bchflip
 A coin toss BCH game
 
+## How to run
+```
+$ sudo pip install flask
+$ EXPORT FLASK_APP=bchflip.py
+$ flask run
+```
+
 ### Request
 
 #### Route
 `GET /address`
+
 `POST /address`
 
 #### cURL

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>BCHflip</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href=".\bchflip.css">
+  </head>
+  <body>
+	<div class="jumbotron col-6 mx-auto">
+		<div class="justify-content-md-center text-center">
+			<h1>Welcome to BCHflip</h1>
+			<div id="availBCH">
+				<p> BCH Available: </p>
+			</div>
+		</div>
+		
+		<div id="qrModal" class="modal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						Welcome to BCHflip! To get started send some coins to this address:
+					</div>
+					<div class="modal-body text-center">
+						<img id="qrCode" src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=%20bitcoincash:18f7zXS2RcTAB7VwCemEuSHBBNnfVUPR5m?amount="/>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="coin" class="mx-auto text-center">
+			<img class="heads" src=".\heads.png" />
+		</div>
+		
+		<div class="bf-input text-center">
+			<div class="btn-group bf-heads-tails" data-toggle="buttons">
+				<label class="btn btn-secondary active user-selection">
+					<input type="radio" name="options" id="heads" value="0"	autocomplete="off" checked> Heads
+				</label>
+				<label class="btn btn-secondary user-selection">
+					<input type="radio" name="options" id="tails" value="1" autocomplete="off"> Tails
+				</label>
+			</div>
+		</div>
+		
+		<div class="input-group bf-wager mx-auto">
+			<span class="input-group-addon" >$</span>
+			<input id="wager" type="text" class="form-control" placeholder="BCH" aria-label="Bitcoin" aria-describedby="basic-addon1">
+		</div>
+		<div class="bf-user-warning">
+			
+		</div>
+		
+		<div class="text-center">
+			<button id="flip" type="button" class="btn btn-primary" disabled>Flip!</button>
+		<div>
+	</div>	
+	
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src=".\bchflip.js"></script>
+	
+	<script>
+			$(function () {
+                var pageObj = new Bchflip.Home();
+            });
+	</script>
+  </body>
+</html>
