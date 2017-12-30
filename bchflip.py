@@ -38,7 +38,7 @@ def get_address_balance(address):
     if data['data'] is None:
         response = jsonify(balance='0', exists=False)
     else:
-        balance = data['data']['balance']
+        balance = satoshi_to_bch(int(data['data']['balance']))
         last_tx = data['data']['last_tx']
         response = jsonify(balance=balance, last_tx=last_tx, exists=True)
     return response
